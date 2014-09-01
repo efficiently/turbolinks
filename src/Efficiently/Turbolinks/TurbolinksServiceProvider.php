@@ -1,7 +1,8 @@
-<?php namespace Frenzy\Turbolinks;
+<?php namespace Efficiently\Turbolinks;
 
 use Helthe\Component\Turbolinks\Turbolinks;
 use Illuminate\Support\ServiceProvider;
+use File;
 
 class TurbolinksServiceProvider extends ServiceProvider
 {
@@ -19,7 +20,13 @@ class TurbolinksServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('frenzy/turbolinks');
+        $this->package('efficiently/turbolinks');
+
+        // Add turbolinks and jquery.turbolinks assets path to the search paths of Larasset package
+        $packageAssetsPath = base_path()."/vendor/helthe/turbolinks/Resources/public/js";
+        if (File::exists($packageAssetsPath)) {
+            $this->app->config->set('larasset::paths', array_merge([$packageAssetsPath], $this->app->config->get('larasset::paths', [])));
+        }
     }
 
     /**
@@ -29,11 +36,11 @@ class TurbolinksServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['turbolinks'] = $this->app->share(function ($app){
+        $this->app['turbolinks'] = $this->app->share(function ($app) {
             return new Turbolinks();
         });
 
-        $this->app->middleware('Helthe\Component\Turbolinks\StackTurbolinks', array($this->app['turbolinks']));
+        $this->app->middleware('Helthe\Component\Turbolinks\StackTurbolinks', [$this->app['turbolinks']]);
     }
 
     /**
@@ -43,7 +50,6 @@ class TurbolinksServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array('turbolinks');
+        return ['turbolinks'];
     }
-
 }

@@ -1,14 +1,16 @@
-Frenzy Turbolinks for Laravel 4.1.*
-==========
+Turbolinks for Laravel 4.1+
+===========================
 
-Frenzy Turbolinks is a port of the rails [turbolinks](https://github.com/rails/turbolinks) gem and the [jquery.turbolinks](https://github.com/kossnocorp/jquery.turbolinks) gem for projects using the Laravel 4.1.*.
+Turbolinks is a port of the Rails [turbolinks](https://github.com/rails/turbolinks)
+and the [jquery.turbolinks](https://github.com/kossnocorp/jquery.turbolinks) gems
+for projects using the PHP [Laravel](http://laravel.com) 4.1+ framework.
 
 ## Versions
 
-Current versions of the following gems are used:
+Current versions of the following JavaScript libraries are used:
 
- * turbolinks: v2.2.0
- * jquery.turbolinks: v2.0.1
+ * turbolinks: v2.3.0
+ * jquery.turbolinks: v2.0.2
 
 ## Performance
 
@@ -18,11 +20,11 @@ the current page instance alive and replaces only the body and the title in the 
 
 Performance improvements will vary depending on the amount of CSS and Javascript
 you are using. You can get up to a 2X increase when using a lot of Javascript and
-CSS. You can find the rails benchmarks [here](https://stevelabnik/turbolinks_test).
+CSS. You can find the Rails benchmarks [here](https://stevelabnik/turbolinks_test).
 
 ## Installation
 
-### Using Composer
+### Using [Composer](https://getcomposer.org)
 
 Add the following in your `composer.json`:
 
@@ -30,51 +32,56 @@ Add the following in your `composer.json`:
 {
     "require": {
         // ...
-        "frenzy/turbolinks": "dev-master"
+        "efficiently/turbolinks": "dev-master"
     }
 }
 ```
 
-Add `'Frenzy\Turbolinks\TurbolinksServiceProvider', ` to the `providers` array in `app/config/app.php`
+Add `'Efficiently\Turbolinks\TurbolinksServiceProvider', ` to the `providers` array in `app/config/app.php`.
 
-Add Composer scripts for automatic publication of assets
+**After** [Larasset](https://github.com/efficiently/larasset) one, if you have installed this package.
 
-```json
-{
-   "scripts": {
-       "post-install-cmd": [
-           "php artisan asset:publish --path=\"vendor/helthe/turbolinks/Resources/public/js\" frenzy/turbolinks"
-       ],
-       "post-update-cmd": [
-           "php artisan asset:publish --path=\"vendor/helthe/turbolinks/Resources/public/js\" frenzy/turbolinks"
-       ]
-   }
-}
+### With the [Larasset](https://github.com/efficiently/larasset) package
+
+If you have installed the [Larasset](https://github.com/efficiently/larasset) package:
+
+The `turbolinks.js` and `jquery.turbolinks.js` files will be added to the asset pipeline and available for you to use.
+
+Add these lines in your `app/assets/javascripts/application.js` file, in this order:
+
+```js
+//= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
+//
+// ... your other scripts here ...
+//
+//= require turbolinks
 ```
 
-Add Javascript files into your project
+Then if the `<head>`section of your main layout.
 
-## Usage
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- ... -->
+        {{ stylesheet_link_tag('application', ['data-turbolinks-track' => true]) }}
+        {{ javascript_include_tag('application', ['data-turbolinks-track' => true]) }}
+    </head>
+    <!-- ... -->
+</html>
+```
 
-Using turbolinks requires both the usage of the javascript library and the event listeners included with the component.
+### Without the Larasset package (legacy method)
 
-### Javascripts
-
-Both the original coffeescript version and compiled version of each script are available for use.
-
-#### Using turbolinks.js
-
-To enable turbolinks, all you need to do is add the compiled turbolinks javascript to your layout in the `<head>`section.
-
-#### Using jquery.turbolinks
-
-If you need to use jquery.turbolinks, you need to add it before `turbolinks.js`
+Click [here](README_LEGACY.md) to publish the assets manually.
 
 ## Compatibility
 
 The turbolinks javascript is designed to work with any browser that fully supports
 pushState and all the related APIs. This includes Safari 6.0+ (but not Safari 5.1.x!),
-IE10, and latest Chromes and Firefoxes.
+IE10+, and latest Chrome and Firefox.
 
 Do note that existing JavaScript libraries may not all be compatible with
 Turbolinks out of the box due to the change in instantiation cycle. You might
@@ -89,4 +96,12 @@ if you require additional information on the javascript libraries and their usag
 
 ## Bugs
 
-For bugs or feature requests, please [create an issue](https://github.com/frenzyapp/turbolinks/issues/new).
+For bugs or feature requests, please [create an issue](https://github.com/efficiently/turbolinks/issues/new).
+
+## Credits
+
+This package is a fork of [Frenzy Turbolinks](https://github.com/frenzyapp/turbolinks) repository.
+
+Which is based on the Symfony middleware package [Helthe Turbolinks](https://github.com/helthe/Turbolinks).
+
+Many thanks to them!
