@@ -1,6 +1,6 @@
 {
-    "name": "frenzy/turbolinks",
-    "description": "Frenzy Turbolinks package for Laravel 4.1+",
+    "name": "efficiently/turbolinks",
+    "description": "Turbolinks makes following links in your web application faster with Laravel 4.1+",
     "keywords": [
         "laravel", "turbolinks", "javascript", "jquery", "jquery.turbolinks",
         "larasset", "asset", "ajax", "pjax"
