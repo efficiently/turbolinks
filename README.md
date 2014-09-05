@@ -37,9 +37,13 @@ Add the following in your `composer.json`:
 }
 ```
 
-Add `'Efficiently\Turbolinks\TurbolinksServiceProvider', ` to the `providers` array in `app/config/app.php`.
+Run this command in a terminal:
+```bash
+composer update efficiently/turbolinks
+```
 
-**After** [Larasset](https://github.com/efficiently/larasset) one, if you have installed this package.
+Add `'Efficiently\Turbolinks\TurbolinksServiceProvider', ` to the `providers` array in `app/config/app.php`
+**after** [Larasset](https://github.com/efficiently/larasset) one (if you have installed this package).
 
 ### With the [Larasset](https://github.com/efficiently/larasset) package
 
