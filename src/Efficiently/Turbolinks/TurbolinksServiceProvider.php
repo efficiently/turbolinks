@@ -25,7 +25,7 @@ class TurbolinksServiceProvider extends ServiceProvider
         // Add turbolinks and jquery.turbolinks assets path to the search paths of Larasset package
         $packageAssetsPath = base_path()."/vendor/helthe/turbolinks/Resources/public/js";
         if (File::exists($packageAssetsPath)) {
-            $this->app->config->set('larasset::paths', array_merge([$packageAssetsPath], $this->app->config->get('larasset::paths', [])));
+            $this->app['config']->set('larasset::paths', array_merge([$packageAssetsPath], $this->app['config']->get('larasset::paths', [])));
         }
     }
 
