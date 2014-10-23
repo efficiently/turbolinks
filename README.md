@@ -9,8 +9,8 @@ for projects using the PHP [Laravel](http://laravel.com) 4.1+ framework.
 
 Current versions of the following JavaScript libraries are used:
 
- * turbolinks: v2.3.0
- * jquery.turbolinks: v2.0.2
+ * turbolinks: v2.4.0
+ * jquery.turbolinks: v2.1.0
 
 ## Performance
 
