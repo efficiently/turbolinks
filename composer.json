@@ -1,8 +1,8 @@
 {
     "name": "efficiently/turbolinks",
-    "description": "Turbolinks makes following links in your web application faster with Laravel 4.1+",
+    "description": "Turbolinks makes following links in your web application faster with Laravel 5.0",
     "keywords": [
-        "laravel", "turbolinks", "javascript", "jquery", "jquery.turbolinks",
+        "laravel", "laravel 5", "turbolinks", "javascript", "jquery", "jquery.turbolinks",
         "larasset", "asset", "ajax", "pjax"
     ],
     "license":     "MIT",
@@ -18,8 +18,9 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "~4.1",
-        "helthe/turbolinks": "~1.4"
+        "illuminate/support": "~5.0",
+        "helthe/turbolinks": "~1.4",
+        "barryvdh/laravel-stack-middleware": "~0.2.0"
     },
     "autoload": {
         "psr-0": {

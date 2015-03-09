@@ -1,25 +1,16 @@
-Turbolinks for Laravel 4.1+
-===========================
+Turbolinks for Laravel 5.0
+==========================
 
 ## Installation with the old fashion way
 
 NOTE: You should use the [new way](README.md#with-the-larasset-package) to get the assets always up to date.
 
-### Without the [Larasset](https://github.com/efficiently/larasset) package
+### Without the [Larasset](https://github.com/efficiently/larasset/tree/1.0) package
 
-Add Composer scripts for automatic publication of assets
+Run this script for automatic publication of assets after each update.
 
-```json
-{
-   "scripts": {
-       "post-install-cmd": [
-           "php artisan asset:publish --path=\"vendor/helthe/turbolinks/Resources/public/js\" efficiently/turbolinks"
-       ],
-       "post-update-cmd": [
-           "php artisan asset:publish --path=\"vendor/helthe/turbolinks/Resources/public/js\" efficiently/turbolinks"
-       ]
-   }
-}
+```bash
+php artisan vendor:publish --provider="Efficiently\Turbolinks\TurbolinksServiceProvider" --force
 ```
 
 Add Javascript files into your project

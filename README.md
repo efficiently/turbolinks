@@ -1,16 +1,19 @@
-Turbolinks for Laravel 4.1+
-===========================
+Turbolinks for Laravel 5.0
+==========================
 
 Turbolinks is a port of the Rails [turbolinks](https://github.com/rails/turbolinks)
 and the [jquery.turbolinks](https://github.com/kossnocorp/jquery.turbolinks) gems
-for projects using the PHP [Laravel](http://laravel.com) 4.1+ framework.
+for projects using the PHP [Laravel](http://laravel.com) 5.0 framework.
 
 ## Versions
 
 Current versions of the following JavaScript libraries are used:
 
- * turbolinks: v2.4.0
+ * turbolinks: v2.5.3
  * jquery.turbolinks: v2.1.0
+
+
+For [**Laravel 4.1 or 4.2**](http://laravel.com/docs/4.2) supports see [Turbolinks 0.9 branch](https://github.com/efficiently/turbolinks/tree/0.9)
 
 ## Performance
 
@@ -32,7 +35,7 @@ Add the following in your `composer.json`:
 {
     "require": {
         // ...
-        "efficiently/turbolinks": "dev-master"
+        "efficiently/turbolinks": "~1.0.0"
     }
 }
 ```
@@ -42,16 +45,16 @@ Run this command in a terminal:
 composer update efficiently/turbolinks
 ```
 
-Add `'Efficiently\Turbolinks\TurbolinksServiceProvider', ` to the `providers` array in `app/config/app.php`
-**after** [Larasset](https://github.com/efficiently/larasset) one (if you have installed this package).
+Add `'Efficiently\Turbolinks\TurbolinksServiceProvider', ` to the `providers` array in `config/app.php`
+**after** [Larasset](https://github.com/efficiently/larasset/tree/1.0) one (if you have installed this package).
 
-### With the [Larasset](https://github.com/efficiently/larasset) package
+### With the [Larasset](https://github.com/efficiently/larasset/tree/1.0) package
 
-If you have installed the [Larasset](https://github.com/efficiently/larasset) package:
+If you have installed the [Larasset](https://github.com/efficiently/larasset/tree/1.0) package:
 
 The `turbolinks.js` and `jquery.turbolinks.js` files will be added to the asset pipeline and available for you to use.
 
-Add these lines in your `app/assets/javascripts/application.js` file, in this order:
+Add these lines in your `resource/assets/js/app.js` file, in this order:
 
 ```js
 //= require jquery
@@ -70,12 +73,16 @@ Then if the `<head>`section of your main layout.
 <html lang="en">
     <head>
         <!-- ... -->
-        {{ stylesheet_link_tag('application', ['data-turbolinks-track' => true]) }}
-        {{ javascript_include_tag('application', ['data-turbolinks-track' => true]) }}
+        {!! stylesheet_link_tag('app', ['data-turbolinks-track' => true]) !!}
+        {!! javascript_include_tag('app', ['data-turbolinks-track' => true]) !!}
     </head>
     <!-- ... -->
 </html>
 ```
+
+And it just works!
+
+**Checkout "[Faster page loads with Turbolinks](https://coderwall.com/p/ypzfdw)" for deeper explanation how to use Turbolink in real world**.
 
 ### Without the Larasset package (legacy method)
 
