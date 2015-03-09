@@ -12,6 +12,8 @@ Current versions of the following JavaScript libraries are used:
  * turbolinks: v2.4.0
  * jquery.turbolinks: v2.1.0
 
+For [**Laravel 5.0**](http://laravel.com/docs/5.0) supports see [Turbolinks 1.0 branch](https://github.com/efficiently/turbolinks/tree/1.0)
+
 ## Performance
 
 Turbolinks makes following links in your web application faster. Instead of letting
