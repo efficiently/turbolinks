@@ -30,8 +30,8 @@ class TurbolinksServiceProvider extends ServiceProvider
 
         // Publish assets
         $this->publishes([
-            // base_path().'/vendor/helthe/turbolinks/Resources/public/js' => base_path('resources/js'),
-            __DIR__.'/../../../vendor/helthe/turbolinks/Resources/public/js' => base_path('resources/js'),// For testing only!
+            base_path().'/vendor/helthe/turbolinks/Resources/public/js' => base_path('resources/js'),
+            // __DIR__.'/../../../vendor/helthe/turbolinks/Resources/public/js' => base_path('resources/js'),// For testing only!
         ], 'assets');
 
         $stack->bind(
