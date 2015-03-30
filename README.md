@@ -1,7 +1,7 @@
 DEPRECATED
 ==========
 
-In favor of the **original repository [Frenzy Turbolinks](https://github.com/frenzyapp/turbolinks/tree/1.0-dev)**, who merged my changes :+1:
+In favor of the **original repository [Frenzy Turbolinks](https://github.com/frenzyapp/turbolinks/blob/1.0-dev/README_LARASSET.md)**, who merged my changes :+1:
 
 Turbolinks for Laravel 4.1+
 ===========================
