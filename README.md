@@ -1,3 +1,10 @@
+DEPRECATED
+==========
+
+In favor of the **original repository [Frenzy Turbolinks](https://github.com/frenzyapp/turbolinks)**, who merged my changes :+1:
+
+You can use https://github.com/frenzyapp/turbolinks/tree/1.0-dev which has the same functionalities of this repository.
+
 Turbolinks for Laravel 5.0
 ==========================
 
