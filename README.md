@@ -1,7 +1,7 @@
 DEPRECATED
 ==========
 
-In favor of the **original repository [Frenzy Turbolinks](https://github.com/frenzyapp/turbolinks)**, who merged my changes :+1:
+In favor of the **original repository [Frenzy Turbolinks](https://github.com/frenzyapp/turbolinks/blob/master/README_LARASSET.md)**, who merged my changes :+1:
 
 Turbolinks for Laravel 5.0
 ==========================
