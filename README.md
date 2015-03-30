@@ -1,3 +1,8 @@
+DEPRECATED
+==========
+
+In favor of the **original repository [Frenzy Turbolinks](https://github.com/frenzyapp/turbolinks/tree/1.0-dev)**, who merged my changed :+1:
+
 Turbolinks for Laravel 4.1+
 ===========================
 
